@@ -1,0 +1,5 @@
+{
+  "fluid_transporter.tooltip": "Fluid：%s，Amount：%d",
+  "item.fluid_transporter.fluid_transporter": "Fluid Transporter",
+  "itemGroup.fluid_transporter": "Fluid Transporter"
+}

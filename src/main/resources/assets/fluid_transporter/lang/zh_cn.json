@@ -1,0 +1,5 @@
+{
+  "fluid_transporter.tooltip": "流体：%s，含量：%d",
+  "item.fluid_transporter.fluid_transporter": "流体转移器",
+  "itemGroup.fluid_transporter": "流体转移器"
+}
