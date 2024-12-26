@@ -1,4 +1,4 @@
-package com.sswtlzz.fluidtransporter.item;
+package com.sswtlzz.fluidtransporter.content.item;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -17,13 +17,14 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.ItemFluidContainer;
 import net.minecraftforge.fluids.capability.templates.FluidHandlerItemStack;
 import net.minecraftforge.fluids.capability.templates.FluidTank;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class FluidTransporterItem extends ItemFluidContainer {
 
-    private static final int MAX_CAPACITY = 1000; // 物品的最大流体容量
+    public static final int MAX_CAPACITY = 1000; // 物品的最大流体容量
     protected FluidTank fluidTank;
 
     public FluidTransporterItem(Properties properties) {
@@ -31,9 +32,7 @@ public class FluidTransporterItem extends ItemFluidContainer {
         fluidTank = new FluidTank(MAX_CAPACITY); // 创建一个最大容量为 1000 的流体槽
     }
 
-
-
-    @Override
+    @Override @NotNull
     public InteractionResult useOn(UseOnContext pContext) {
         ItemStack itemStack = pContext.getItemInHand();
         Player player = pContext.getPlayer();
@@ -101,10 +100,6 @@ public class FluidTransporterItem extends ItemFluidContainer {
 
         pTooltipComponents.add(Component.translatable("fluid_transporter.tooltip", Component.translatable(fluidHandlerItemStack.getFluid().getTranslationKey()), fluidHandlerItemStack.getFluid().getAmount()));
     }
-
-
-
-
 }
 
 
