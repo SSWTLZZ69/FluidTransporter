@@ -1,6 +1,5 @@
 package com.sswtlzz.fluidtransporter.item;
 
-import com.sswtlzz.fluidtransporter.FluidTransporterConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -24,11 +23,10 @@ import java.util.List;
 
 public class FluidTransporterItem extends ItemFluidContainer {
 
-    protected FluidTank fluidTank;
+    private static final int MAX_CAPACITY = 1000; // 物品的最大流体容量
 
     public FluidTransporterItem(Properties properties) {
-        super(properties.stacksTo(1), FluidTransporterConfig.maxCapacity);
-        fluidTank = new FluidTank(FluidTransporterConfig.maxCapacity);
+        super(properties.stacksTo(1), MAX_CAPACITY);
     }
 
 
@@ -58,7 +56,7 @@ public class FluidTransporterItem extends ItemFluidContainer {
                 if (itemFluidStack.isEmpty()) {
                     //容器中有流体
                     if (!targetFluid.isEmpty()) {
-                            int minFluid = Math.min(targetFluid.getAmount(), FluidTransporterConfig.maxCapacity);
+                            int minFluid = Math.min(targetFluid.getAmount(), MAX_CAPACITY);
                             FluidStack drainFluid = fluids.drain(new FluidStack(targetFluid, minFluid), IFluidHandler.FluidAction.EXECUTE);
                             fluidHandlerItemStack.fill(drainFluid, IFluidHandler.FluidAction.EXECUTE);
                             player.swing(pContext.getHand());
