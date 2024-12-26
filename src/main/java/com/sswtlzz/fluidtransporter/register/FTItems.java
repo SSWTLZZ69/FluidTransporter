@@ -22,7 +22,7 @@ public class FTItems {
     }
 
     public static ItemEntry<FluidTransporterItem> simpleFluidTransporterItem(String name, Rarity rarity, int maxCapacity) {
-        return REGISTRATE.item(name, FluidTransporterItem::new)
+        return REGISTRATE.item(name, properties -> new FluidTransporterItem(properties, maxCapacity))
                 .properties(properties -> properties
                         .rarity(rarity)
                 )

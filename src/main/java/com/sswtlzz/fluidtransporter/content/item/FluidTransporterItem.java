@@ -24,12 +24,8 @@ import java.util.List;
 
 public class FluidTransporterItem extends ItemFluidContainer {
 
-    public static final int MAX_CAPACITY = 1000; // 物品的最大流体容量
-    protected FluidTank fluidTank;
-
-    public FluidTransporterItem(Properties properties) {
-        super(properties.stacksTo(1), MAX_CAPACITY);
-        fluidTank = new FluidTank(MAX_CAPACITY); // 创建一个最大容量为 1000 的流体槽
+    public FluidTransporterItem(Properties properties, int capacity) {
+        super(properties.stacksTo(1), capacity);
     }
 
     @Override @NotNull
@@ -57,7 +53,7 @@ public class FluidTransporterItem extends ItemFluidContainer {
                 if (itemFluidStack.isEmpty()) {
                     //容器中有流体
                     if (!targetFluid.isEmpty()) {
-                            int minFluid = Math.min(targetFluid.getAmount(), MAX_CAPACITY);
+                            int minFluid = Math.min(targetFluid.getAmount(), this.capacity);
                             FluidStack drainFluid = fluids.drain(new FluidStack(targetFluid, minFluid), IFluidHandler.FluidAction.EXECUTE);
                             fluidHandlerItemStack.fill(drainFluid, IFluidHandler.FluidAction.EXECUTE);
                             player.swing(pContext.getHand());
