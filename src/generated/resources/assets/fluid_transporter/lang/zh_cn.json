@@ -1,0 +1,7 @@
+{
+  "fluid_transporter.tooltip": "流体：%s，含量：%d",
+  "item.fluid_transporter.advanced_fluid_transporter": "高级流体转移器",
+  "item.fluid_transporter.basic_fluid_transporter": "基础流体转移器",
+  "item.fluid_transporter.ultimate_fluid_transporter": "终极流体转移器",
+  "itemGroup.fluid_transporter.fluid_transporter": "流体转移器"
+}

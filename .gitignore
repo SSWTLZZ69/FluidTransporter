@@ -3,5 +3,5 @@
 /build/
 /build/classes/java/main/
 run/
-run-data/
 .idea/
+/run-data/

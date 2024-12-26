@@ -1,0 +1,7 @@
+{
+  "fluid_transporter.tooltip": "Fluid：%s，Amount：%d",
+  "item.fluid_transporter.advanced_fluid_transporter": "Advanced Fluid Transporter",
+  "item.fluid_transporter.basic_fluid_transporter": "Basic Fluid Transporter",
+  "item.fluid_transporter.ultimate_fluid_transporter": "Ultimate Fluid Transporter",
+  "itemGroup.fluid_transporter.fluid_transporter": "Fluid Transporter"
+}
